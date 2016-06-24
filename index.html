@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页页码</title>
+    <style>
+        a,input,button{
+            outline:none;
+        }
+        :link,:visited,ins{
+            text-decoration: none;
+        }
+        .page{
+            margin:25px 0 auto;
+            overflow: hidden;
+            clear: both;
+            text-align: center;
+            font-size:0;
+        }
+        .page a{
+            display: inline-block;
+            margin:0 10px;
+            padding: 0 5px;
+            min-width: 20px;
+            height: 29px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #787d82;
+            text-align: center;
+            border-bottom: 1px solid transparent;
+            transition:border-color 0.2s;
+        }
+        .page-disable{
+            color:#ccc;
+        }
+        .page a.active{
+            background: #0077ec;
+            color: #fff;
+            border-color:transparent;
+        }
+        .page a:hover{
+            border-bottom: 1px solid #0077ec;
+            color: #0077ec;
+        }
+        .page a.active:hover{
+            color: #fff;
+        }
+        .page-icon i{
+            display:inline-block;
+            width:5px;
+            height: 9px;
+            background: url("img/bg_hotsale.gif");
+        }
+        .page-disable i{
+            background-position: -67px -608px;
+        }
+    </style>
+</head>
+<!--行内元素bug解决办法
+  1.写成一行
+  2.父级设置font-size:0;
+-->
+<body>
+   <div class="page page-icon">
+       <a href="#" class="">首页</a>
+       <a href="#" class=""><i></i>上一页</a>
+       <a href="#" class="">1</a>
+       <a href="#">2</a>
+       <a href="#">3</a>
+       <a href="#">4</a>
+       <a href="#">5</a>
+       <a href="#">6</a>
+       <a href="#">7</a>
+       <a href="#">下一页</a>
+       <a href="#">尾页</a>
+   </div>
+<script>
+    var aList = document.getElementsByTagName('a');
+
+    function replaceElement(){
+        var newnode = document.createElement("span");
+        var oldnode = document.getElementsByTagName("a");
+        oldnode.parentNode.replaceChild(span,a);
+    }
+
+        for(var i=0;i<aList.length;i++){
+            var class = aList[i].getAttribute("class")
+            if(class == ""){
+                aList[i].setAttribute("class","disable")
+            }
+        }
+    
+</script>
+</body>
+</html>
